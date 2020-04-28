@@ -1,0 +1,34 @@
+ //An array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).
+
+
+
+
+public static void main(String args[])
+    {
+        int[] a = new int[]{3,8,9,7,6};
+        int k=3;
+        cycleRotation(a, k);
+    }
+
+    public static int[] cycleRotation(int[] a, int k)
+    {
+        if(a.length == 0)
+        {
+            return a;
+        }
+
+        for(int i=0; i<k; i++)
+    {
+        int last = a[a.length-1];
+
+        for(int j=a.length-1; j>0; j--)
+        {
+            a[j] = a[j-1];
+        }
+
+        a[0] = last;
+    }
+
+
+       return a;
+    }
