@@ -4,6 +4,14 @@
 
 //Your goal is to find that missing element.
 
+//O(N) - first, if the length is zero, the missing element must be n+1, so return 1.
+//then sort the array, which allows us to create a for loop and compare the i value 
+//to the value at A[i-1] (because i starts at 1), if it doesnt match it means this
+//must be the missing element. If all the elements match then the missing element
+//must be n+1, so return i+1 
+
+import java.util.Arrays;
+
   public static int missingElem(int[] A)
     {
 
