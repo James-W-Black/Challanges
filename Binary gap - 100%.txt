@@ -1,4 +1,4 @@
- 	//count and then return the largest gap between 1's in any given binary number. This means the longest consecutive string
+	//count and then return the largest gap between 1's in any given binary number. This means the longest consecutive string
 	//of 0's, that fall inbetween two 1's.
 
 	int binary = 32; //any value
@@ -7,7 +7,7 @@
         int largest = 0;
         int length =0;
 
-        //remove trailing 0's
+        //remove trailing 0's by turning them into 1s.
         for(int i=binaryString.length()-1; i >=0 ; i--)
         {
             if(binaryString.charAt(i)=='0')
@@ -22,7 +22,7 @@
 
         }
 
-        //count the gap
+        //count the gap, by finding the first 0, and adding to the length of the gap until a 1 is found.
         for(int i=0; i<binaryString.length(); i++)
         {
 
