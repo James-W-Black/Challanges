@@ -5,7 +5,7 @@
 //Count the minimal number of jumps that the small frog must perform to reach its target.
 
 //O(1) - this program will check if the distance which the frog needs to travel (Y-X) is mod D
-//meaning it would divide perfectly, if it does not then do the divide and add 1.
+//meaning it would divide perfectly, if it does not then do the divide but add 1.
 
 public static int frogJump(int X, int Y, int D)
     {
