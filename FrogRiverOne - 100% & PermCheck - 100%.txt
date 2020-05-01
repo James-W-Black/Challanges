@@ -1,0 +1,76 @@
+I have added these two challanges into the same file as the programs are esssentially identical. 
+  
+FROGRIVERONE - 100%
+//for this problem, a small frog wants to get from one side of the river to another
+    //the array represents falling leaves, which the frog can use to cross. The frog
+    //can only cross once 1 - x values have all been seen in the array. For example
+    //if x = 3, then the frog can only cross once 1,2 and 3 have been in the area at least once.
+    //the array index present the seconds it takes, return the earliest in seconds the frog can cross
+    
+    public static int frogRiver(int[] A, int X)
+    {
+
+        Set allLeaves = new HashSet();
+
+        //put all required numbers from 1 - x into the all leaves set
+        for(int i=1; i<=X; i++)
+        {
+            allLeaves.add(i);
+        }
+
+        Set currentLeaves = new HashSet();
+
+        //loop through all the elements of a and add them to the current set
+        for(int i=0; i<A.length; i++)
+        {
+            currentLeaves.add(A[i]);
+
+            //if the size of current is less than all, then there is no need to do the contains check so continue
+            if(currentLeaves.size() < allLeaves.size()) continue;
+
+            if(currentLeaves.containsAll(allLeaves))
+            {
+                return i;
+            }
+        }
+
+     return -1;
+    }
+
+PERMCHECK - 100%
+
+    //A non-empty array A consisting of N integers is given.
+    //A permutation is a sequence containing each element from 1 to N once, and only once.
+    //return 1, is a permutation is possible and 0 if not
+
+    public static int permCheck(int[] A)
+    {
+
+        if(A.length==0)
+        {
+         return 0;
+        }
+
+        Set allElem = new HashSet();
+
+        //firstly create a set of all numbers 1 - a.length
+        for(int i=1; i<=A.length;i++)
+        {
+            allElem.add(i);
+        }
+
+        Set currentElem = new HashSet();
+
+        //loop through all elements of a, and add them to the current elem set
+        for(int i=0; i<A.length; i++)
+        {
+            currentElem.add(A[i]);
+
+            //if the size of current is less than all, then there is no need to do the contains check so continue
+            if(currentElem.size() < allElem.size()) continue;
+
+            if(currentElem.containsAll(allElem)) return 1;
+        }
+
+        return 0;
+    }
